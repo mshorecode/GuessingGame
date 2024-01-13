@@ -1,6 +1,6 @@
 ﻿using System.Threading.Channels;
 
-string greeting = "\n\t\tWelcome to Guessing Game!\n\tYou have 4 guesses to get the secret number!";
+string greeting = "\n\t\tWelcome to Guessing Game!\n\tTry and guess the secret number to win!";
 bool userGuess;
 bool difficultyChoice;
 int numericValue = 0;
@@ -51,7 +51,7 @@ void Easy()
     {
         do
         {
-            Console.WriteLine($"\n[EASY] Guess the secret number (You have {i} guesses left):");
+            Console.WriteLine($"\n[EASY] Guess the secret number (Guesses left {i + 1}):");
             userGuess = int.TryParse(Console.ReadLine(), out numericValue);
         }
         while (!userGuess || numericValue < 0 || numericValue >= 100);
@@ -78,7 +78,7 @@ void Medium()
     {
         do
         {
-            Console.WriteLine($"\n[MEDIUM] Guess the secret number (You have {i} guesses left):");
+            Console.WriteLine($"\n[MEDIUM] Guess the secret number (Guesses left {i + 1}):");
             userGuess = int.TryParse(Console.ReadLine(), out numericValue);
         }
         while (!userGuess);
@@ -105,8 +105,9 @@ void Hard()
     {
         do
         {
-            Console.WriteLine($"\n[HARD] Guess the secret number (You have {i} guesses left):");
+            Console.WriteLine($"\n[HARD] Guess the secret number (Guesses left {i + 1}):");
             userGuess = int.TryParse(Console.ReadLine(), out numericValue);
+
         }
         while (!userGuess);
 
